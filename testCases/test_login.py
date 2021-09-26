@@ -3,12 +3,14 @@ from selenium import webdriver
 from pageObject.Loginpage import Login
 from main import file_path
 import selenium
+from utilities.readproperties import ReadConfig
+import os
 
 
 class TestLoginPage:
-    base_url = "https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F"
-    username = "admin@yourstore.com"
-    password = "admin"
+    base_url = ReadConfig.base_url()
+    username = ReadConfig.get_username()
+    password = ReadConfig.get_password()
 
     def test_home_page_title(self, setup):
         self.driver = setup
@@ -34,8 +36,7 @@ class TestLoginPage:
         if db_title == "Dashboard / nopCommerce administration":
             print("\nStatus is True")
             assert True
-            screenshots = "E:\Framework Project\automation-framework\screenshots"
-            self.driver.save_screenshot("screenshots/scrsht.png")
+            self.driver.save_screenshot("E:\Videos\Courses\Practice\GIT\automation-framework\screenshots"+"scrsht.png")
             self.driver.close()
 
         else:
