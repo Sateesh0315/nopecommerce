@@ -12,5 +12,3 @@ class LogGen:
         logger.setLevel(logging.DEBUG)
         return logger
 
-
-LogGen.log_gen()

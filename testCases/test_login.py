@@ -15,7 +15,6 @@ class TestLoginPage:
         act_title = self.driver.title
         if act_title == 'Your store. Login':
             self.logger.info("******************** Got the title of the page ********************")
-            self.logger.info("The title for the page admin-demo.nopcommerce.com is {}".format(act_title))
             assert True
             self.driver.close()
         else:
