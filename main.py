@@ -1,5 +1,4 @@
 import os
 
-file_path = os.path.dirname(__file__)
-file_path = file_path + "\configurations"
-print(file_path)
+i = os.execute executesheelcommand("Print this message")
+print(i)
