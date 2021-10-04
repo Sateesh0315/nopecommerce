@@ -1,7 +1,9 @@
 import configparser
+import os
 
+ini_file = os.path.abspath(os.path.dirname(".\\..\configurations\."))
 config = configparser.RawConfigParser()
-config.read("E:/Videos/Courses/Practice/GIT/automation-framework/configurations/config.ini")
+config.read(ini_file + "\config.ini")
 
 
 class ReadConfig:

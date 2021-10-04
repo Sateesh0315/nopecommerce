@@ -39,11 +39,12 @@ class TestLoginPage:
             logger.debug("******************** Got the title of the page ********************")
             logger.debug("The title for the Dashboard is {}".format(db_title))
             assert True
-            file_path = os.path.join('.\\screenshots\\' + 'Dashboard')
-            self.driver.save_screenshot(os.path.join(file_path))
+            file_path = os.path.abspath(os.path.dirname('.\\..\screenshots\.'))
+            self.driver.save_screenshot(file_path + "\Dashboard_Title_True.jpg")
             self.driver.close()
         else:
             logger.error("******************** Didn't get the title of the page ********************")
-            self.driver.save_screenshot("E:/Videos/Courses/Practice/GIT/automation-framework/screenshots/Dashboard.png")
+            file_path = os.path.abspath(os.path.dirname(".\\..\screenshots\."))
+            self.driver.save_screenshot(file_path + "\Dashboard_Title_False.jpg")
             self.driver.close()
             assert False
