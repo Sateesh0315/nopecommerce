@@ -2,6 +2,7 @@ from pageObject.Loginpage import Login
 from utilities.readproperties import ReadConfig
 from utilities.customlogger import LogGen
 import os
+from utilities.customlogger import LogGen
 
 
 class TestLoginPage:
